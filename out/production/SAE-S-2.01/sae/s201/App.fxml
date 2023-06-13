@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sae.s201.Controller">
+    <children>
+        <SplitPane focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+                <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+                    <content>
+                        <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="594.0" prefWidth="578.0">
+                            <children>
+                                <BarChart fx:id="barEvo" alternativeColumnFillVisible="true" animated="false" layoutY="300.0" prefHeight="294.0" prefWidth="568.0" title="Classement des Seismes par nombre">
+                                    <xAxis>
+                                        <CategoryAxis animated="false" label="Année" side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis animated="false" label="nombre de seismes" side="LEFT" />
+                                    </yAxis>
+                                </BarChart>
+                                <BarChart fx:id="barIntens" animated="false" layoutX="5.0" layoutY="5.0" prefHeight="300.0" prefWidth="563.0" title="Classement des Seismes par intensité">
+                                    <xAxis>
+                                        <CategoryAxis fx:id="yAxis1" animated="false" label="Intensité" side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis animated="false" label="nombre de seismes" side="LEFT" fx:id="xAxis1" />
+                                    </yAxis>
+                                </BarChart>
+                            <AnchorPane layoutX="568.0" layoutY="1.0" prefHeight="598.0" prefWidth="316.0">
+                                <children>
+                                    <Slider fx:id="anneeSlider" blockIncrement="1" layoutX="6.0" layoutY="262.0" majorTickUnit="1" max="2023" min="1900" prefHeight="38.0" prefWidth="313.0" snapToTicks="true">
+                                        <showTickMarks>true</showTickMarks>
+                                        <showTickLabels>true</showTickLabels>
+                                    </Slider>
+                                    <Label fx:id="anneeLabel" alignment="CENTER" layoutX="2.0" layoutY="220.0" prefHeight="20.0" prefWidth="337.0" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                                    <Label layoutX="36.0" layoutY="339.0" text="Affichage graphique" textAlignment="CENTER">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label layoutX="135.0" layoutY="436.0" text="Région">
+                                        <font>
+                                            <Font name="AppleGothic Regular" size="16.0" />
+                                        </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="selectRegion" layoutX="72.0" layoutY="461.0" prefWidth="150.0" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="461.0" />
+                                    <Button layoutX="190.0" layoutY="336.0" mnemonicParsing="false" onAction="#changeGraphAnnee" text="Affichage" />
+                              <Button layoutX="190.0" layoutY="520.0" mnemonicParsing="false" onAction="#changeGraphLieu" text="Affichage" />
+                              <Label fx:id="AnneeDoublon" layoutX="64.0" layoutY="126.0" text="Cette année à déja été traitée" textFill="RED" visible="false" />
+                              <Label fx:id="LieuDoublon" layoutX="98.0" layoutY="272.0" text="Ce lieu à déja été traité" textFill="RED" visible="false" />
+                              <Separator layoutX="-2.0" layoutY="161.0" prefHeight="2.0" prefWidth="338.0" />
+                              <Separator layoutX="-3.0" layoutY="-5.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
+                              <Separator layoutX="2.0" layoutY="433.0" prefHeight="3.0" prefWidth="331.0" />
+                              <Label layoutX="73.0" layoutY="387.0" prefHeight="17.0" prefWidth="195.0" text="Selection du lieux">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="4.0" layoutY="377.0" prefHeight="0.0" prefWidth="326.0" />
+                              <Label layoutX="35.0" layoutY="522.0" text="Affichage Graphique">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="144.0" layoutY="230.0" text="Année">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="3.0" layoutY="222.0" prefHeight="3.0" prefWidth="316.0" />
+                              <Label layoutX="61.0" layoutY="178.0" text="Selection de l'année">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="36.0" layoutY="14.0" prefHeight="70.0" prefWidth="248.0" text="S2.01 G2 D " textAlignment="CENTER">
+                                 <font>
+                                    <Font size="48.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="107.0" text="CHOPARD William, FERRANDO Alexis &amp; ZAINA Elias">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Label>
+                                </children>
+                            </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+            </items>
+        </SplitPane>
+    </children>
+</VBox>
